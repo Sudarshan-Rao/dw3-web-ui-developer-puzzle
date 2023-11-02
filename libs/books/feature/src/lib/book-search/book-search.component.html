@@ -34,11 +34,11 @@
             <button
               mat-flat-button
               color="primary"
-              [attr.aria-label]="'Add ' + b.title + ' to reading list'"
+              [attr.aria-label]="b.isAdded ? b.finished ? 'Finished ' + b.title : 'Added ' + b.title : 'Add ' + b.title + ' to reading list'"
               (click)="addBookToReadingList(b)"
               [disabled]="b.isAdded"
             >
-              {{ b.isAdded ? 'Added' : 'Add to Reading List' }}
+              {{ b.isAdded ? b.finished ? 'Finished' : 'Added' : 'Add to reading list' }}
             </button>
           </div>
         </div>
