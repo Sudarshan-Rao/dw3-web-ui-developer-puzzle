@@ -8,7 +8,7 @@ export const loadReadingListSuccess = createAction(
   props<{ list: ReadingListItem[] }>()
 );
 export const loadReadingListError = createAction(
-  '[Reading List API] Load list error',
+  '[Reading List API] Load list error: Failed to load list',
   props<{ error: string }>()
 );
 
@@ -18,7 +18,7 @@ export const addToReadingList = createAction(
 );
 
 export const failedAddToReadingList = createAction(
-  '[Reading List API] Failed add to list',
+  '[Reading List API] Add to list failed',
   props<{ book: Book }>()
 );
 
@@ -39,5 +39,20 @@ export const failedRemoveFromReadingList = createAction(
 
 export const confirmedRemoveFromReadingList = createAction(
   '[Reading List API] Confirmed remove from list',
+  props<{ item: ReadingListItem }>()
+);
+
+export const markAsFinished = createAction(
+  '[Book Search Results] Mark as finished',
+  props<{ item: ReadingListItem }>()
+);
+
+export const failedMarkAsFinished = createAction(
+  '[Reading List API] Failed mark as finished',
+  props<{ item: ReadingListItem }>()
+);
+
+export const confirmedMarkAsFinished = createAction(
+  '[Reading List API] Confirmed mark as finished',
   props<{ item: ReadingListItem }>()
 );
